@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <style>
+        .jumbotron {
+            /* max-width: 50%; */
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+        }
+
+        .clock {
+            max-width: 50%;
+        }
+    </style>
+
+
+    <script>
+        let a;
+        let eltime;
+        let timestr;
+
+        let hours, min, sec, milsec;
+
+
+        setInterval(() => {
+            a = new Date();
+            eltime = document.getElementById('time');
+
+            hours = ('0' + a.getHours() % 12).slice(-2);
+            min = ('0' + a.getMinutes()).slice(-2);
+            sec = ('0' + a.getSeconds()).slice(-2);
+            milsec = ('00' + a.getMilliseconds()).slice(-3);
+
+
+
+            timestr = hours + " : " + min + ': ' + sec + ' : ' + milsec;
+            eltime.innerHTML = timestr;
+            console.log(a.getTimezoneOffset());
+        }, 1);
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+    <div class="jumbotron m-auto">
+        <div class="clock m-auto ">
+
+            <h2>
+                The time is <span id="time"></span>
+            </h2>
+
+
+
+
+        </div>
+
+
+
+    </div>;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
